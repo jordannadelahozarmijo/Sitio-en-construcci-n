@@ -1,0 +1,247 @@
+
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  display: flex;
+  background: linear-gradient(180deg, #608EF7 0%, #000000 100%);
+  justify-content: center; /* centrar horizontalmente */
+  align-items: center;     /* centrar verticalmente */
+  margin: 0;
+  padding: 0;           /* margen general visible */
+}
+
+/* Tarjeta principal */
+.card {
+  width: 100%;
+  max-width: 1293px;
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 2rem;
+  display: flex;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  isolation: isolate;
+  
+}
+
+/* Sección izquierda */
+.left-section {
+  flex: 1 1 45%;
+  min-width: 500px;
+}
+
+/* Sección derecha */
+.right-section {
+  flex: 1 1 45%;
+  display: flex;
+  max-width: 500px;
+  justify-content: center;
+}
+
+/* Mockup teléfono */
+.phone-mockup {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 20px;
+}
+
+/* Logo + título */
+.brand {
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: flex-start; /* 🔹 alineado a la izquierda por defecto */
+  gap: 12px;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.brand-logo {
+  width: 106px;
+  height: 106px;
+  border-radius: 15px;
+}
+
+.brand-title {
+  font-size: 4.25rem;
+  color: #0E3786;
+  font-weight: 700;
+}
+
+/* Otros textos */
+.badge {
+  display: inline-block;
+  background: #608EF7;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.download {
+  margin-bottom: 1.5rem;
+}
+
+.descarga {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.download img {
+  width: 160px;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.download img:hover {
+  transform: scale(1.05);
+}
+
+.contacto {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Animación */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  body, html {
+    height: auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+
+  .left-section {
+    min-width: auto;
+  }
+
+  .brand {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .brand-logo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .brand-title {
+    font-size: 2.5rem;
+  }
+
+  .badge {
+    font-size: 1rem;
+    padding: 6px 20px;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .download img {
+    width: 180px;
+  }
+
+  .contacto {
+    font-size: 1rem;
+  }
+
+  .right-section {
+    margin-top: 1rem;
+  }
+
+  .phone-mockup {
+    max-width: 280px;
+  }
+}
+
+/* 💻 Tablet */
+@media (min-width: 769px) and (max-width: 1199px) {
+  body, html {
+    height: auto;
+    padding: 3rem 2rem;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .brand {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .brand-title {
+    font-size: 3rem;
+  }
+
+  .phone-mockup {
+    max-width: 300px;
+  }
+}
+
+/* 🖥️ Desktop grande */
+@media (min-width: 1200px) {
+  body, html {
+    justify-content: center; /* ✅ card centrada horizontal */
+    align-items: center;     /* ✅ centrada vertical */
+    padding: 4rem;           /* ✅ espacio alrededor */
+  }
+
+  .card {
+    text-align: left;
+    align-items: center;
+    margin: auto;
+  }
+
+  .brand {
+    justify-content: flex-start; /* 🔹 logo + título a la izquierda */
+    text-align: left;
+  }
+}
