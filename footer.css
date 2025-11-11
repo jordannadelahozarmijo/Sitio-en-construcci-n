@@ -1,0 +1,141 @@
+/* 🔹 Footer general */
+.footer {
+  color: #fff;
+  padding: 4rem 6rem; /* más espacio general */
+  font-family: 'Inria Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🔹 Contenedor interno */
+.footer-content {
+  width: 100%;
+  max-width: 1300px; /* un poco más ancho */
+  display: flex;
+  justify-content: space-between; /* separa los bloques */
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 3rem; /* 🔹 espacio entre columnas */
+}
+
+/* 🔹 Columna izquierda */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 1rem; /* 🔹 más espacio entre título y subtítulo */
+}
+
+.footer-left h3 {
+  font-weight: 500;
+  font-size: 2.2rem; /* levemente más grande */
+  align-items: flex-end;
+  margin: 0;
+  color: #ffffff;
+}
+
+
+
+
+.footer-left p {
+  font-size: 1.1rem;
+  color: #cfcfcf;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* 🔹 Columna derecha */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 1rem; /* 🔹 espacio entre teléfono y correo */
+}
+
+.footer-right p {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+.footer-right a {
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.footer-right a:hover {
+  opacity: 0.7;
+}
+
+/* 🔹 Mantiene el footer abajo si hay poco contenido */
+footer.footer {
+  margin-top: auto;
+}
+
+/* 🔹 Responsivo */
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 2rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .footer-left,
+  .footer-right {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
+/* 🔹 Botón flotante de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25d366;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+}
+
+.whatsapp-float img {
+  width: 34px;
+  height: 34px;
+  filter: invert(1);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 55px;
+    height: 55px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .whatsapp-float img {
+    width: 28px;
+    height: 28px;
+  }
+}

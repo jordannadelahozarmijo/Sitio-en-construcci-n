@@ -1,0 +1,60 @@
+/* === SECCIÓN DETRÁS DE SIRVE TODO === */
+
+
+/* Contenedor de imagen + texto */
+.nosotros {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  text-align: left;
+  width: 100%;
+}
+
+/* Imagen del obrero */
+.imagenObrero {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: radial-gradient(circle, #e0e9ff 0%, #bcd1ff 100%);
+  padding: 8px;
+}
+
+/* Párrafo */
+.nosotros p {
+  flex: 1;
+  max-width: 600px;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* === RESPONSIVE === */
+
+@media (max-width: 768px) {
+  .card:nth-of-type(3) {
+    padding: 2rem;
+  }
+
+  .nosotros {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .imagenObrero {
+    width: 220px;
+    height: 220px;
+  }
+
+  .nosotros p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .card:nth-of-type(3) h2 {
+    font-size: 2rem;
+  }
+}

@@ -8,15 +8,25 @@
   font-family: 'Inria Sans', sans-serif;
 }
 
-body, html {
-  height: 100%;
-  display: flex;
-  background: linear-gradient(180deg, #608EF7 0%, #000000 100%);
-  justify-content: center; /* centrar horizontalmente */
-  align-items: center;     /* centrar verticalmente */
+html, body {
+  min-height: 100%;
+  display: block;
   margin: 0;
   padding: 0;
 }
+
+.background {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #608EF7 0%, #000000 100%);
+  align-items: center;
+  gap: 5rem; /* espacio entre cards */
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  width: 100%;
+}
+
+
 
 /* Tarjeta principal */
 .card {
@@ -136,6 +146,47 @@ body, html {
   transform: translateY(0);
 }
 
+
+/* ----------------------- Spinner de carga -------------------- */
+/* 🔹 Overlay semitransparente */
+.spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  color: #fff;
+  font-family: 'Inria Sans', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  display: none; /* oculto por defecto */
+}
+
+/* 🔹 Spinner animado */
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(255, 255, 255, 0.3);
+  border-top: 6px solid #608EF7; /* color principal del sitio */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* -----------------------  Fin Spinner de carga -------------------- */
+
+/* -----------------------  Inicio @Medias -------------------- */
 /* 📱 Mobile */
 @media (max-width: 768px) {
   body, html {
@@ -152,6 +203,11 @@ body, html {
     width: 100%;
     max-width: 100%;
     margin: 1rem 0;
+  }
+
+  .form-card {
+    margin: 2rem 0; /* espacio arriba y abajo */
+    padding: 1.5rem;
   }
 
   .left-section {
@@ -201,6 +257,7 @@ body, html {
   }
 }
 
+
 /* 💻 Tablet */
 @media (min-width: 769px) and (max-width: 1199px) {
   body, html {
@@ -213,6 +270,11 @@ body, html {
     align-items: center;
     text-align: center;
     max-width: 90%;
+  }
+
+  .form-card {
+    margin: 3rem 0; /* más margen en pantallas medianas */
+    padding: 2rem;
   }
 
   .brand {
@@ -233,18 +295,28 @@ body, html {
 /* 🖥️ Desktop grande */
 @media (min-width: 1200px) {
   body, html {
-    justify-content: center; /* ✅ card centrada horizontal */
-    align-items: center;     /* ✅ centrada vertical */
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem; /* controla el espacio entre cards */
+    padding-top: 5rem; /* 🔹 margen superior global para la primera card */
+    padding-bottom: 5rem; /* 🔹 espacio al final de la página */
+  }
+
+  .form-card {
+    margin: 0 auto; /* centrada sin conflictos */
+    padding: 2.5rem;
   }
 
   .card {
-    text-align: left;
-    align-items: center;
-    margin: auto;
-  }
-
-  .brand {
-    justify-content: flex-start; /* 🔹 logo + título a la izquierda */
-    text-align: left;
+    margin: 0 auto;
   }
 }
+
+

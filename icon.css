@@ -1,0 +1,44 @@
+/* Contenedor general */
+.background {
+  position: relative; /* 🔹 necesario para que el ícono se posicione respecto al fondo */
+}
+
+/* Ícono de Instagram “flotante” alineado con la card */
+.instagram-floating-icon {
+  position: absolute;
+  top: 2.2rem; /* 🔹 un poco más arriba para quedar centrado visualmente */
+  right: calc(50% - 700px + 2rem); /* 🔹 alineado al borde derecho de la card (max-width: 1293px / 2) */
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ícono dentro (agrandado un 1.8x ≈ 80%) */
+.instagram-floating-icon img {
+  width: 50px;   /* antes 38px → 68px equivale a ~1.8× */
+  height: 50px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Efecto hover */
+.instagram-floating-icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* 📱 Ajuste responsive */
+@media (max-width: 768px) {
+  .instagram-floating-icon {
+    right: 1.5rem; /* 🔹 en móviles, se pega al borde */
+    top: 1.5rem;
+  }
+
+  .instagram-floating-icon img {
+    width: 48px; /* 🔹 tamaño más razonable en pantallas pequeñas */
+    height: 48px;
+  }
+}

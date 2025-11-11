@@ -5,19 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sirve Todo - Página en construcción</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="nosotros.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="icon.css">
+  <link rel="stylesheet" href="form.css">
+  <link rel="stylesheet" href="footer.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
   
 </head>
 <body>
+
+
   <div class="background">
+
+      <!-- Ícono Instagram -->
+      <a href="https://www.instagram.com/sirvetodoapp/" target="_blank" class="instagram-floating-icon">
+        <img src="images/instagram.svg" alt="Instagram Sirve Todo">
+      </a>
+      <br>
+      <!-- Primer Card -->
+       <div class="form-card fade-in">
+        <h2>¿Buscas un servicio?</h2>
+        <form id="serviceForm">
+          <div class="form-group full">
+            <label for="descripcion">Yo necesito...</label>
+            <textarea id="descripcion" name="descripcion" placeholder="Describe lo que necesitas" required></textarea>
+          </div>
+
+          <div class="form-group half">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+          </div>
+
+          <div class="form-group half">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Ingresa tu correo" required>
+          </div>
+
+          <div class="form-group half">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Ingresa tu teléfono" required>
+          </div>
+
+          <div class="form-group half">
+            <label for="comuna">Comuna</label>
+            <select id="comuna" name="comuna" required>
+              <option value="" disabled selected>Selecciona la comuna</option>
+              <option>Santiago</option>
+              <option>Las Condes</option>
+              <option>Providencia</option>
+              <option>Ñuñoa</option>
+              <option>La Florida</option>
+            </select>
+          </div>
+
+          <div id="file-container">
+              <label class="file-label">
+                + Agrega un archivo (JPG, PNG, MP4 o MP3 de hasta 5 MB)
+                <input type="file" name="archivo1" accept=".jpg,.jpeg,.png,.mp4,.mp3" onchange="addFileInput(this)">
+              </label>
+          </div>
+
+          <button type="submit" class="submit-btn">Enviar</button>
+           
+        </form>
+       </div>
+
+              <!-- Spinner de carga -->
+                    <div id="spinner" class="spinner-overlay">
+                      <div class="spinner"></div>
+                      <p>Enviando, por favor espera...</p>
+                    </div>
+
+      <!-- Segunda Card -->
     <div class="card fade-in">
       <div class="left-section">
-        <div class="badge">Página en construcción</div>
 
-        <!-- Logo (reemplázalo con el tuyo) -->
         <!-- Logo + título alineados -->
         <div class="brand">
         <img src="images/logo.webp" alt="Logo Sirve Todo" class="brand-logo">
@@ -44,8 +109,38 @@
         <img src="images/vista1.webp" alt="Vista de la app Sirve Todo" class="phone-mockup">
       </div>
     </div>
+      <!-- Tercera Card -->
+    <div class="card fade-in">
+       <h2> Detrás de sirve todo</h2>
+       <div class="nosotros">
+         <img class="imagenObrero" src="images/obrero.png" alt="Hombre con casco y overol levantando su mano con un celular">
+          <p>Entusiastas por resolver problemas cotidianos, vimos la necesidad de conectar a las personas con servicios confiables de manera rápida y sencilla. <br> Así nació SirveTodo.com, una plataforma creada para facilitar la búsqueda de profesionales en distintas áreas , desde gasfitería y electricidad, hasta jardinería y mantenimiento del hogar, ayudando a quienes necesitan apoyo y a quienes ofrecen su trabajo a encontrarse en un solo lugar.</p>
+       </div>
+    </div>
+      <!-- Footer-->
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-left">
+            <h3>Santiago de Chile</h3>
+            <p>Diseñado y desarrollado por Delahoz Design</p>
+          </div>
+          <div class="footer-right">
+            <p>+56 9 1111 2222</p>
+            <p><a href="mailto:contacto@sirvetodo.com">contacto@sirvetodo.com</a></p>
+          </div>
+        </div>
+      </footer>
+
+      <!-- 🔹 Botón flotante de WhatsApp -->
+      <a href="https://wa.me/56912345678" 
+        class="whatsapp-float" 
+        target="_blank" 
+        rel="noopener noreferrer">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
+      </a>
   </div>
 
   <script src="script.js"></script>
+  <script src="script_form.js"></script>
 </body>
 </html>
